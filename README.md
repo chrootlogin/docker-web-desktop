@@ -1,5 +1,7 @@
 # Dockerized Xubuntu web desktop
 
+[![](https://images.microbadger.com/badges/image/rootlogin/web-desktop.svg)](https://microbadger.com/images/rootlogin/web-desktop "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/rootlogin/web-desktop.svg)](https://microbadger.com/images/rootlogin/web-desktop "Get your own version badge on microbadger.com")  [![](https://images.microbadger.com/badges/commit/rootlogin/web-desktop.svg)](https://microbadger.com/images/rootlogin/web-desktop "Get your own commit badge on microbadger.com") [![Docker Repository on Quay](https://quay.io/repository/rootlogin/web-desktop/status "Docker Repository on Quay")](https://quay.io/repository/rootlogin/web-desktop)
+
 This image provides a dockerized web desktop based on Xubuntu 18.04 LTS (Xfce4). Thanks to noVNC you can access a full flegged linux desktop directly over your web browser.
 
 ## Features
