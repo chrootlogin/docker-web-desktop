@@ -20,9 +20,18 @@ ENV LC_ALL=en_US.UTF-8 \
   TZ=Europe/Zurich
 
 RUN set -ex \
-  # Install packages
   && apt-get update \
+  # Install locales
+  && DEBIAN_FRONTEND=noninteractive apt-get -y install \
+  locales \
+  && sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
+  && sed -i -e 's/# de_CH.UTF-8 UTF-8/de_CH.UTF-8 UTF-8/' /etc/locale.gen \
+  && dpkg-reconfigure --frontend=noninteractive locales \
+  && locale-gen en_US.UTF-8 \
+  && /usr/sbin/update-locale LANG=en_US.UTF-8 \
+  # Upgrade all packages
   && DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade \
+  # Install packages
   && DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends -y install \
   atril \
   avahi-autoipd \
@@ -57,7 +66,6 @@ RUN set -ex \
   libreoffice-style-elementary \
   libreoffice-writer \
   libxfce4ui-utils \
-  locales \
   mate-calc \
   menulibre \
   mousepad \
@@ -116,12 +124,6 @@ RUN set -ex \
   && rm -rf /tmp/novnc.zip /tmp/novnc \
   # Create User
   && useradd -m -s /bin/bash user \
-  # Enable locales
-  && sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
-  && sed -i -e 's/# de_CH.UTF-8 UTF-8/de_CH.UTF-8 UTF-8/' /etc/locale.gen \
-  && dpkg-reconfigure --frontend=noninteractive locales \
-  && locale-gen en_US.UTF-8 \
-  && /usr/sbin/update-locale LANG=en_US.UTF-8 \
   # Install pip packages
   && pip install websockify \
   # Make tini executable
