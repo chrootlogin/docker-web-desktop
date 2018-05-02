@@ -14,9 +14,9 @@ LABEL maintainer="Simon Erhardt <hello@rootlogin.ch>" \
 
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/local/bin/tini
 
-ENV LC_ALL=en_US.UTF-8 \
-  LANG=en_US.UTF-8 \
-  LANGUAGE=en_US.UTF-8 \
+ENV LC_ALL=en_GB.UTF-8 \
+  LANG=en_GB.UTF-8 \
+  LANGUAGE=en_GB.UTF-8 \
   TZ=Europe/Zurich
 
 # Upgrade all packages
@@ -31,10 +31,10 @@ RUN set -ex \
   && DEBIAN_FRONTEND=noninteractive apt-get -y install \
   locales \
   && sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
-  && sed -i -e 's/# de_CH.UTF-8 UTF-8/de_CH.UTF-8 UTF-8/' /etc/locale.gen \
+  && sed -i -e 's/# en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' /etc/locale.gen \
   && dpkg-reconfigure --frontend=noninteractive locales \
-  && locale-gen en_US.UTF-8 \
-  && /usr/sbin/update-locale LANG=en_US.UTF-8 \
+  && locale-gen en_GB.UTF-8 \
+  && /usr/sbin/update-locale LANG=en_GB.UTF-8 \
   && apt-get clean
 
 # Install packages
