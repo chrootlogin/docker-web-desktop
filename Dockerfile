@@ -38,8 +38,6 @@ RUN set -ex \
   avahi-daemon \
   bc \
   ca-certificates \
-  chromium-browser \
-  chromium-browser-l10n \
   cups \
   cups-bsd \
   cups-client \
@@ -48,6 +46,7 @@ RUN set -ex \
   dbus-x11 \
   desktop-file-utils \
   engrampa \
+  firefox \
   fonts-dejavu-core \
   fonts-freefont-ttf \
   fonts-indic \
@@ -137,6 +136,7 @@ RUN set -ex \
   xfwm4 \
   xubuntu-icon-theme \
   xubuntu-wallpapers \
+  xul-ext-ubufox \
   zip \
   && apt-get clean \
   # Install noVNC
