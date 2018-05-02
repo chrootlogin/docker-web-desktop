@@ -14,10 +14,7 @@ LABEL maintainer="Simon Erhardt <hello@rootlogin.ch>" \
 
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/local/bin/tini
 
-ENV LC_ALL=en_GB.UTF-8 \
-  LANG=en_GB.UTF-8 \
-  LANGUAGE=en_GB.UTF-8 \
-  TZ=Europe/Zurich
+ENV TZ=Europe/Zurich
 
 # Upgrade all packages
 RUN set -ex \
@@ -36,6 +33,10 @@ RUN set -ex \
   && locale-gen en_GB.UTF-8 \
   && /usr/sbin/update-locale LANG=en_GB.UTF-8 \
   && apt-get clean
+
+ENV LC_ALL=en_GB.UTF-8 \
+  LANG=en_GB.UTF-8 \
+  LANGUAGE=en_GB.UTF-8
 
 # Install packages
 RUN set -ex \

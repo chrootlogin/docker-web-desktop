@@ -43,6 +43,13 @@ RUN apt-get update \
   gimp-help-en
 ```
 
+## Environment variables
+
+You can use the following environment variables to customize your environment:
+
+ * **TZ:** Timezone (Default: Europe/Zurich)
+ * **LANG:** Locale (You have to enable the according locales first; Default: en_GB.UTF-8)
+
 ## Security notes
 
 This image has no kind of encryption or authentication enabled. You should use a SSL frontend proxy with some kind of authentication (basic auth as example) like Nginx when you deploy this image in the public internet.
