@@ -1,0 +1,8 @@
+show-button-title=true
+show-button-icon=true
+
+show-command-lockscreen=false
+show-command-switchuser=false
+show-command-logout=false
+
+launcher-show-description=false
