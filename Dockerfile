@@ -50,6 +50,21 @@ RUN set -ex \
   engrampa \
   fonts-dejavu-core \
   fonts-freefont-ttf \
+  fonts-indic \
+  fonts-kacst-one \
+  fonts-khmeros-core \
+  fonts-lao \
+  fonts-liberation \
+  fonts-lklug-sinhala \
+  fonts-noto-cjk \
+  fonts-noto-hinted \
+  fonts-opensymbol \
+  fonts-sil-abyssinica \
+  fonts-sil-padauk \
+  fonts-symbola \
+  fonts-thai-tlwg \
+  fonts-tibetan-machine \
+  fonts-ubuntu \
   gigolo \
   git \
   gnome-font-viewer \
@@ -60,6 +75,7 @@ RUN set -ex \
   gvfs-fuse \
   hplip \
   indicator-messages \
+  iputils-ping \
   libnotify-bin \
   libnss-mdns \
   libpam-gnome-keyring \
@@ -117,7 +133,10 @@ RUN set -ex \
   xfce4-taskmanager \
   xfce4-terminal \
   xfce4-whiskermenu-plugin \
+  xfdesktop4 \
   xfwm4 \
+  xubuntu-icon-theme \
+  xubuntu-wallpapers \
   zip \
   && apt-get clean \
   # Install noVNC
