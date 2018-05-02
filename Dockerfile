@@ -17,23 +17,22 @@ ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/
 ENV TZ=Europe/Zurich \
   DISABLE_SUDO=false
 
-# Upgrade all packages
+# Upgrade all packages and install base stuff
 RUN set -ex \
   && apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade \
+  && DEBIAN_FRONTEND=noninteractive apt-get -y install \
+  apt-utils \
+  locales \
   && apt-get clean
 
-# Install locales
+# Enable locales
 RUN set -ex \
-  && apt-get update \
-  && DEBIAN_FRONTEND=noninteractive apt-get -y install \
-  locales \
   && sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
   && sed -i -e 's/# en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' /etc/locale.gen \
   && dpkg-reconfigure --frontend=noninteractive locales \
   && locale-gen en_GB.UTF-8 \
   && /usr/sbin/update-locale LANG=en_GB.UTF-8 \
-  && apt-get clean
 
 ENV LC_ALL=en_GB.UTF-8 \
   LANG=en_GB.UTF-8 \
@@ -43,8 +42,7 @@ ENV LC_ALL=en_GB.UTF-8 \
 RUN set -ex \
   && apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends -y install \
-  #accountsservice \
-  #apt-utils \
+  accountsservice \
   atril \
   avahi-autoipd \
   avahi-daemon \

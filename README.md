@@ -48,8 +48,8 @@ RUN apt-get update \
 You can use the following environment variables to customize your environment:
 
  * **TZ:** Timezone (Default: Europe/Zurich).
- * **LANG:** Locale (You have to enable the according locales first; Default: en_GB.UTF-8).
- * **DISABLE_SUDO:** Set to "true" to disable sudo (Default: false).
+ * **LANG:** Locale (You have to enable the according locales first; Default: en_GB.UTF-8).
+ * **DISABLE_SUDO:** Set to "true" to disable sudo (Default: false).
 
 ## Security notes
 
@@ -58,7 +58,8 @@ This image has no kind of encryption or authentication enabled. You should use a
 ## FAQ
 
  * **Chromium browser does not work:** Yes because of the advanced sandboxing of Chromium which is not compatible with Docker. Try either to run this container privileged (`docker run --privileged rootlogin/web-desktop`) or start Chromium with disabled sandboxing (`chromium-browser --no-sandbox`).
+ * **Error: "sudo: effective uid is not 0, is /usr/bin/sudo on a file system with the 'nosuid' option set or an NFS file system without root privileges?":** Check if you have activated the "--no-new-privileges" flag in docker. If you have activated this flag then sudo can't get higher rights.
 
 ## Contribution
 
-This stuff is released under MIT license. I'm happy about every pull-request, that makes this tool better.
+This stuff is released under MIT license. I'm happy about every pull-request, that makes this thing better.
