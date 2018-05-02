@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eu
 
-command="sudo -u user -H /usr/bin/vncserver -autokill -depth 24 -name desktop -xstartup /usr/bin/startxfce4 -SecurityTypes None"
+command="runuser -l oracle -c '/usr/bin/vncserver -autokill -depth 24 -name desktop -xstartup /usr/bin/startxfce4 -SecurityTypes None'"
 
 # Proxy signals
 function kill_app(){
