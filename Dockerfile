@@ -41,6 +41,7 @@ RUN set -ex \
 RUN set -ex \
   && apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends -y install \
+  accountsservice \
   atril \
   avahi-autoipd \
   avahi-daemon \
