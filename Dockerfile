@@ -69,6 +69,7 @@ RUN set -ex \
   mate-calc \
   menulibre \
   mousepad \
+  net-tools \
   openssh-client \
   orage \
   pidgin \
