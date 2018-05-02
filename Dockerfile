@@ -85,6 +85,7 @@ RUN set -ex \
   printer-driver-sag-gdi \
   printer-driver-splix \
   python-pip \
+  python-setuptools \
   ristretto \
   sudo \
   supervisor \
