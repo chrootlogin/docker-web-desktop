@@ -47,8 +47,9 @@ RUN apt-get update \
 
 You can use the following environment variables to customize your environment:
 
- * **TZ:** Timezone (Default: Europe/Zurich)
- * **LANG:** Locale (You have to enable the according locales first; Default: en_GB.UTF-8)
+ * **TZ:** Timezone (Default: Europe/Zurich).
+ * **LANG:** Locale (You have to enable the according locales first; Default: en_GB.UTF-8).
+ * **DISABLE_SUDO:** Set to "true" to disable sudo (Default: false).
 
 ## Security notes
 

@@ -14,7 +14,8 @@ LABEL maintainer="Simon Erhardt <hello@rootlogin.ch>" \
 
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/local/bin/tini
 
-ENV TZ=Europe/Zurich
+ENV TZ=Europe/Zurich \
+  DISABLE_SUDO=false
 
 # Upgrade all packages
 RUN set -ex \

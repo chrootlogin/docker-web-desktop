@@ -9,5 +9,11 @@ echo ${TZ} > /etc/timezone
 export LC_ALL=${LANG}
 export LANGUAGE=${LANG}
 
+# Disable sudo if requested
+if [ "${DISABLE_SUDO}" == "true" ]; then
+  rm -f /etc/sudoers.d/user-nopasswd
+  echo "SUDO disabled!"
+fi
+
 # Run supervisor
 exec /usr/bin/supervisord
