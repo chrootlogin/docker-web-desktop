@@ -55,7 +55,7 @@ RUN set -ex \
   libreoffice-calc \
   libreoffice-gnome \
   libreoffice-style-elementary \
-  libreoffice-write \
+  libreoffice-writer \
   libxfce4ui-utils \
   locales \
   mate-calc \
