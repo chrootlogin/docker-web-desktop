@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eu
 
-command="runuser -l oracle -c '/usr/bin/vncserver -autokill -depth 24 -name desktop -xstartup /usr/bin/startxfce4 -SecurityTypes None'"
+COMMAND="/usr/bin/vncserver -autokill -depth 24 -name desktop -xstartup /usr/bin/startxfce4 -SecurityTypes None"
 
 # Proxy signals
 function kill_app(){
@@ -11,7 +11,7 @@ function kill_app(){
 trap "kill_app" SIGINT SIGTERM
 
 # Launch daemon
-$command
+runuser -l user "${COMMAND}"
 sleep 2
 
 # Loop while the pidfile and the process exist
