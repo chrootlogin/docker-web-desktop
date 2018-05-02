@@ -12,7 +12,7 @@ export LANGUAGE=${LANG}
 # Disable sudo if requested
 if [ "${DISABLE_SUDO}" == "true" ]; then
   rm -f /etc/sudoers.d/user-nopasswd
-  echo "SUDO disabled!"
+  echo "SUDO disabled!"
 fi
 
 # Run supervisor
