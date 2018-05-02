@@ -11,7 +11,7 @@ function kill_app(){
 trap "kill_app" SIGINT SIGTERM
 
 # Launch daemon
-runuser -l user "${COMMAND}"
+runuser -l user -c "${COMMAND}"
 sleep 2
 
 # Loop while the pidfile and the process exist
