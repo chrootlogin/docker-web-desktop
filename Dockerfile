@@ -152,7 +152,6 @@ RUN set -ex \
   # Make tini executable
   && chmod +x /usr/local/bin/tini
 
-
 COPY root /
 
 EXPOSE 8083
