@@ -37,12 +37,15 @@ RUN set -ex \
   avahi-autoipd \
   avahi-daemon \
   bc \
+  binutils \
+  bsdmainutils \
   ca-certificates \
   cups \
   cups-bsd \
   cups-client \
   cups-filters \
   dbus \
+  dbus-user-session \
   dbus-x11 \
   desktop-file-utils \
   engrampa \
@@ -90,9 +93,12 @@ RUN set -ex \
   net-tools \
   openssh-client \
   orage \
+  patch \
   pidgin \
   pidgin-otr \
   pinentry-gtk2 \
+  policykit-1 \
+  policykit-1-gnome \
   policykit-desktop-privileges \
   printer-driver-brlaser \
   printer-driver-c2esp \
