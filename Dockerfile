@@ -86,6 +86,7 @@ RUN set -ex \
   mate-calc \
   menulibre \
   mousepad \
+  mugshot \
   net-tools \
   openssh-client \
   orage \
