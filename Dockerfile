@@ -42,6 +42,7 @@ RUN set -ex \
   && apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends -y install \
   accountsservice \
+  apt-utils \
   atril \
   avahi-autoipd \
   avahi-daemon \
@@ -60,6 +61,7 @@ RUN set -ex \
   desktop-file-utils \
   engrampa \
   firefox \
+  firefox-locale-en \
   fonts-dejavu-core \
   fonts-freefont-ttf \
   fonts-indic \
@@ -86,13 +88,21 @@ RUN set -ex \
   gvfs-backends \
   gvfs-fuse \
   hplip \
+  hunspell \
+  hunspell-en-gb \
+  hyphen-en-gb \
   indicator-messages \
   iputils-ping \
+  language-pack-en \
   libnotify-bin \
   libnss-mdns \
   libpam-gnome-keyring \
   libreoffice-calc \
   libreoffice-gnome \
+  libreoffice-help-en-gb \
+  libreoffice-impress \
+  libreoffice-l10n-en-gb \
+  libreoffice-lightproof-en \
   libreoffice-style-elementary \
   libreoffice-writer \
   libxfce4ui-utils \
@@ -131,6 +141,7 @@ RUN set -ex \
   thunar-media-tags-plugin \
   thunar-volman \
   thunderbird \
+  thunderbird-locale-en \
   tigervnc-standalone-server \
   transmission-gtk \
   unzip \
