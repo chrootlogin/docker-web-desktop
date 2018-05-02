@@ -43,8 +43,8 @@ ENV LC_ALL=en_GB.UTF-8 \
 RUN set -ex \
   && apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends -y install \
-  accountsservice \
-  apt-utils \
+  #accountsservice \
+  #apt-utils \
   atril \
   avahi-autoipd \
   avahi-daemon \
