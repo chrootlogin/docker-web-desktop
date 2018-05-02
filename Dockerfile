@@ -43,7 +43,9 @@ RUN set -ex \
   cups \
   cups-bsd \
   cups-client \
-  cups-filters\
+  cups-filters \
+  dbus \
+  dbus-x11 \
   desktop-file-utils \
   engrampa \
   fonts-dejavu-core \
