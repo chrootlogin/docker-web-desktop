@@ -19,9 +19,15 @@ ENV LC_ALL=en_US.UTF-8 \
   LANGUAGE=en_US.UTF-8 \
   TZ=Europe/Zurich
 
+# Upgrade all packages
 RUN set -ex \
   && apt-get update \
-  # Install locales
+  && DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade \
+  && apt-get clean
+
+# Install locales
+RUN set -ex \
+  && apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get -y install \
   locales \
   && sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
@@ -29,9 +35,11 @@ RUN set -ex \
   && dpkg-reconfigure --frontend=noninteractive locales \
   && locale-gen en_US.UTF-8 \
   && /usr/sbin/update-locale LANG=en_US.UTF-8 \
-  # Upgrade all packages
-  && DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade \
-  # Install packages
+  && apt-get clean
+
+# Install packages
+RUN set -ex \
+  && apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends -y install \
   atril \
   avahi-autoipd \
@@ -90,6 +98,7 @@ RUN set -ex \
   menulibre \
   mousepad \
   mugshot \
+  nano \
   net-tools \
   openssh-client \
   orage \
@@ -145,18 +154,23 @@ RUN set -ex \
   xubuntu-wallpapers \
   xul-ext-ubufox \
   zip \
-  && apt-get clean \
-  # Install noVNC
+  && apt-get clean
+
+# Install noVNC
+RUN set -ex \
   && wget -q https://github.com/novnc/noVNC/archive/v1.0.0.zip -O /tmp/novnc.zip \
   && mkdir -p /tmp/novnc /opt/novnc \
   && unzip /tmp/novnc.zip -d /tmp/novnc \
   && mv /tmp/novnc/*/* /opt/novnc/ \
   && rm -rf /tmp/novnc.zip /tmp/novnc \
-  # Create User
-  && adduser --disabled-password --gecos "Web Desktop User" user \
-  # Install pip packages
-  && pip install websockify \
-  # Make tini executable
+  && pip --no-cache-dir install websockify
+
+# Create user
+RUN set -ex \
+  && adduser --disabled-password --gecos "Web Desktop User" user
+
+# Miscellaneous tasks
+RUN set -ex \
   && chmod +x /usr/local/bin/tini
 
 COPY root /
