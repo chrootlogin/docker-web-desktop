@@ -147,7 +147,7 @@ RUN set -ex \
   && mv /tmp/novnc/*/* /opt/novnc/ \
   && rm -rf /tmp/novnc.zip /tmp/novnc \
   # Create User
-  && useradd -m -s /bin/bash user \
+  && adduser --disabled-password --gecos "Web Desktop User" user \
   # Install pip packages
   && pip install websockify \
   # Make tini executable
