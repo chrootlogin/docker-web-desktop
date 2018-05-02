@@ -44,6 +44,7 @@ RUN set -ex \
   atril \
   avahi-autoipd \
   avahi-daemon \
+  bash-completion \
   bc \
   binutils \
   bsdmainutils \
