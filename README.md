@@ -49,8 +49,8 @@ This image has no kind of encryption or authentication enabled. You should use a
 
 ## FAQ
 
- * **Chromium browser does not work:** Yes because of the advanced sandboxing of Chromium which is not compatible with Docker. Try either to run this container privileged (`docker run --privileged rootlogin/web-desktop`) or start Chromium with disabled sandboxing (`chromium-browser --no-sandbox`).
+ * **Chromium browser does not work:** Yes because of the advanced sandboxing of Chromium which is not compatible with Docker. Try either to run this container privileged (`docker run --privileged rootlogin/web-desktop`) or start Chromium with disabled sandboxing (`chromium-browser --no-sandbox`).
 
-## Contribution
+## Contribution
 
 This stuff is released under MIT license. I'm happy about every pull-request, that makes this tool better.
