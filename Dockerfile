@@ -150,10 +150,8 @@ RUN set -ex \
   # Install pip packages
   && pip install websockify \
   # Make tini executable
-  && chmod +x /usr/local/bin/tini \
-  # Remove incompatible packages
-  && DEBIAN_FRONTEND=noninteractive apt-get -y remove \
-  blueman
+  && chmod +x /usr/local/bin/tini
+
 
 COPY root /
 
